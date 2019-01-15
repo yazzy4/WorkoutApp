@@ -12,6 +12,9 @@
 		9176F50221DD668A001F68A8 /* NetworkHelper .swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176F50121DD668A001F68A8 /* NetworkHelper .swift */; };
 		9176F50421DD6851001F68A8 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176F50321DD6851001F68A8 /* AppError.swift */; };
 		9176F50621DD7A8A001F68A8 /* WorkoutDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176F50521DD7A8A001F68A8 /* WorkoutDetailViewController.swift */; };
+		9181C55A21EE5CF200292B08 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181C55921EE5CF200292B08 /* PostViewController.swift */; };
+		91D856C421E2A5A30085B31A /* Image Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D856C321E2A5A30085B31A /* Image Helper.swift */; };
+		91D856F921E448810085B31A /* DescriptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D856F821E448810085B31A /* DescriptionDetailViewController.swift */; };
 		91E8B43321CD9EB900235D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8B43221CD9EB900235D0A /* AppDelegate.swift */; };
 		91E8B43521CD9EB900235D0A /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8B43421CD9EB900235D0A /* WorkoutController.swift */; };
 		91E8B43821CD9EB900235D0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E8B43621CD9EB900235D0A /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 		9176F50121DD668A001F68A8 /* NetworkHelper .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkHelper .swift"; sourceTree = "<group>"; };
 		9176F50321DD6851001F68A8 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		9176F50521DD7A8A001F68A8 /* WorkoutDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailViewController.swift; sourceTree = "<group>"; };
+		9181C55921EE5CF200292B08 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		91D856C321E2A5A30085B31A /* Image Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image Helper.swift"; sourceTree = "<group>"; };
+		91D856F821E448810085B31A /* DescriptionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionDetailViewController.swift; sourceTree = "<group>"; };
 		91E8B42F21CD9EB900235D0A /* WorkoutApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E8B43221CD9EB900235D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E8B43421CD9EB900235D0A /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
@@ -49,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				9176F4F821DD63BC001F68A8 /* Workout.swift */,
-				9176F4FC21DD6506001F68A8 /* WorkoutAPIClient .swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -59,6 +64,8 @@
 			children = (
 				91E8B43421CD9EB900235D0A /* WorkoutController.swift */,
 				9176F50521DD7A8A001F68A8 /* WorkoutDetailViewController.swift */,
+				91D856F821E448810085B31A /* DescriptionDetailViewController.swift */,
+				9181C55921EE5CF200292B08 /* PostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -68,6 +75,8 @@
 			children = (
 				9176F50121DD668A001F68A8 /* NetworkHelper .swift */,
 				9176F50321DD6851001F68A8 /* AppError.swift */,
+				91D856C321E2A5A30085B31A /* Image Helper.swift */,
+				9176F4FC21DD6506001F68A8 /* WorkoutAPIClient .swift */,
 			);
 			path = "Helpers ";
 			sourceTree = "<group>";
@@ -92,9 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				91E8B43221CD9EB900235D0A /* AppDelegate.swift */,
-				9176F4FB21DD63CD001F68A8 /* Controllers */,
 				9176F50021DD6662001F68A8 /* Helpers  */,
 				9176F4FA21DD63C3001F68A8 /* Models */,
+				9176F4FB21DD63CD001F68A8 /* Controllers */,
 				91E8B43621CD9EB900235D0A /* Main.storyboard */,
 				91E8B43921CD9EBB00235D0A /* Assets.xcassets */,
 				91E8B43B21CD9EBB00235D0A /* LaunchScreen.storyboard */,
@@ -174,9 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91D856C421E2A5A30085B31A /* Image Helper.swift in Sources */,
 				9176F50221DD668A001F68A8 /* NetworkHelper .swift in Sources */,
 				9176F50621DD7A8A001F68A8 /* WorkoutDetailViewController.swift in Sources */,
 				91E8B43521CD9EB900235D0A /* WorkoutController.swift in Sources */,
+				9181C55A21EE5CF200292B08 /* PostViewController.swift in Sources */,
+				91D856F921E448810085B31A /* DescriptionDetailViewController.swift in Sources */,
 				9176F50421DD6851001F68A8 /* AppError.swift in Sources */,
 				91E8B43321CD9EB900235D0A /* AppDelegate.swift in Sources */,
 				9176F4FD21DD6506001F68A8 /* WorkoutAPIClient .swift in Sources */,

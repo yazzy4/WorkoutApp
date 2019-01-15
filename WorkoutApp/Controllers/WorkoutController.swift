@@ -13,46 +13,71 @@ class WorkoutController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var refreshControl: UIRefreshControl!
-
+    
     public var workouts = [Workout]() {
         didSet {
             DispatchQueue.main.async {
-                self.title = "BLS"
                 self.tableView.reloadData()
             }
         }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
        tableView.dataSource = self
         setupRefreshControl()
+        fetchWorkouts()
+//        fetchDays()
+        title = "gymMap"
+
     }
     
     private func setupRefreshControl(){
         refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
-//        refreshControl.addTarget(self, action: #selector(fetchWorkouts), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(fetchWorkouts), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         fetchWorkouts()
     }
+    
     @objc private func fetchWorkouts() {
         WorkoutAPIClient.getWorkout {(appError, workouts) in
             if let appError = appError {
-//                print(appError.errorMessage())
+                print(appError.errorMessage())
             } else if let workouts = workouts {
                 self.workouts = workouts
+                dump(self.workouts)
             }
-            DispatchQueue.main.async {
-                self.refreshControl.endRefreshing()
-            }
+           }
+        }
+    
+//    @objc private func fetchDays() {
+//        WorkoutAPIClient.getWorkout{(appError, days) in
+//            if let appError = appError {
+//                print(appError.errorMessage())
+//            } else let days = days {
+//                self.days = days
+//            }
+//                        DispatchQueue.main.async {
+//                            self.days = self.days
+//                        }
+//        }
+//
+//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow,
+            let workoutDetailViewController = segue.destination as? WorkoutDetailViewController else {
+                return
+        }
+        let workout = workouts[indexPath.row]
+        workoutDetailViewController.workout = workout
         }
     }
-}
+
+
 
 extension WorkoutController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,9 +85,9 @@ extension WorkoutController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "workoutCell", for: indexPath)
-        let workout = workouts[indexPath.row]
-        cell.textLabel?.text = workout.title
-        cell.detailTextLabel?.text = workout.id
+        let day = workouts[indexPath.row]
+        cell.textLabel?.text = day.title
+        cell.detailTextLabel?.text = day.workOutDays
         return cell
     }
     
