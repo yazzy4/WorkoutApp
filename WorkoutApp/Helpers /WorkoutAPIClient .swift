@@ -9,8 +9,8 @@
 import Foundation
 
 final class WorkoutAPIClient {
-    static func getWorkout(completionHandler: @escaping (AppError?, [Workout]?) -> Void) {
-        let workoutEndpoint = "http://nmjr3.mocklab.io/WorkoutApp"
+    static func getWorkout(completionHandler: @escaping (AppError?, [Gym]?) -> Void) {
+        let workoutEndpoint = "http://5c7c31c160c5c60014a3fafd.mockapi.io/blink"
         NetworkHelper.shared.performDataTask(endpointURLString: workoutEndpoint, httpMethod: "GET", httpData: nil) { (appError, data, httpResponse) in
             if let appError = appError {
                 completionHandler(appError, nil)
@@ -23,7 +23,7 @@ final class WorkoutAPIClient {
             }
             if let data = data {
                 do{
-                    let workouts = try JSONDecoder().decode([Workout].self, from: data)
+                    let workouts = try JSONDecoder().decode([Gym].self, from: data)
                 
                     completionHandler(nil, workouts)
             } catch {
@@ -38,7 +38,7 @@ final class WorkoutAPIClient {
     }
     
     static func updateWorkout(data: Data, completion: @escaping (Bool) -> Void) {
-        let updateWorkoutEndpoint = "http://nmjr3.mocklab.io/WorkoutApp"
+        let updateWorkoutEndpoint = "http://5c7c31c160c5c60014a3fafd.mockapi.io/blink"
         NetworkHelper.shared.uploadData(endpointString: updateWorkoutEndpoint, httpMethod: "POST", httpData: data) { (appError, data, httpResponse) in
             if let _ = appError {
                 completion(false)
