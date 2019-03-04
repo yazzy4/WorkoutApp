@@ -13,20 +13,19 @@ class DescriptionDetailViewController: UIViewController {
     
     @IBOutlet weak var descriptionText: UITextView!
     
-
-    public var workout: Gym!
-    //lazy var dayDescription = workout.days!
-    //public var dayWorkoutDescription: Workout.Days!
-
     
-
+    public var workout: Gym!
+    //public var dayWorkoutDescription: Workout.Days!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //descriptionText.isEditable = true
         
     }
     
-
+    
     
 }
 

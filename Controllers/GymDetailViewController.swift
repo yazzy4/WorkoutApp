@@ -7,12 +7,14 @@
 //
 
 import UIKit
-class WorkoutDetailViewController: UIViewController {
+
+
+class GymDetailViewController: UIViewController {
     
     @IBOutlet weak var planTableView: UITableView!
     
-    var workout: Gym!
-    lazy var workoutDays = workout.contact
+    var gymDetails: Gym!
+    lazy var gymOptions = gymDetails.contact
     
     var gym = [Gym]()
     
@@ -36,17 +38,17 @@ class WorkoutDetailViewController: UIViewController {
             let descriptionDetailViewController = segue.destination as? DescriptionDetailViewController else {
                 return
         }
-        let workoutDescription = gym[indexPath.row]
-        descriptionDetailViewController.workout = self.workout
+        let gymDescription = gym[indexPath.row]
+        descriptionDetailViewController.workout = self.gymDetails
         //        descriptionDetailViewController.descriptionText = workoutDescription
         
     }
     
 }
 
-extension WorkoutDetailViewController: UITableViewDataSource {
+extension GymDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return workoutDays.count
+        return gymOptions.count
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
