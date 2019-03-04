@@ -6,6 +6,7 @@
 //  Copyright © 2019 Yaz Burrell. All rights reserved.
 //
 
+
 import Foundation
 
 struct Gym: Codable {
@@ -16,7 +17,7 @@ struct Gym: Codable {
     let firstFloor: [FirstFloor]
     let secondFloor: [SecondFloor]
     let stretchingArea: [StretchingArea]
-    let amenities: [Amenity]
+    let amenities: [Amenity]?
 }
 
 struct Amenity: Codable {
@@ -48,7 +49,7 @@ struct FirstFloorTrainingMachines: Codable {
     let tricepPushDown: String
     let seatedRow: String
     let bicepCurl: String
-    let assistedDIPAndPullUp: String
+    let assistedDipAndPullUp: String?
     let motionDualActionPulley: String
     let latPulldown: String
 }
