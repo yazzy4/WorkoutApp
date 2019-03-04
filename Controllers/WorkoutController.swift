@@ -44,11 +44,11 @@ class WorkoutController: UIViewController {
     }
     
     @objc private func fetchWorkouts() {
-        WorkoutAPIClient.getWorkout {(appError, workouts) in
+        WorkoutAPIClient.getWorkout {(appError, gym) in
             if let appError = appError {
                 print(appError.errorMessage())
-            } else if let workouts = workouts {
-                self.workouts = workouts
+            } else if let gym = gym {
+                self.workouts = [gym]
                 dump(self.workouts)
             }
            }

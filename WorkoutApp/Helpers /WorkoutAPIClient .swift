@@ -9,7 +9,7 @@
 import Foundation
 
 final class WorkoutAPIClient {
-    static func getWorkout(completionHandler: @escaping (AppError?, [Gym]?) -> Void) {
+    static func getWorkout(completionHandler: @escaping (AppError?, Gym?) -> Void) {
         let workoutEndpoint = "http://5c7c31c160c5c60014a3fafd.mockapi.io/blink"
         NetworkHelper.shared.performDataTask(endpointURLString: workoutEndpoint, httpMethod: "GET", httpData: nil) { (appError, data, httpResponse) in
             if let appError = appError {
@@ -23,7 +23,7 @@ final class WorkoutAPIClient {
             }
             if let data = data {
                 do{
-                    let workouts = try JSONDecoder().decode([Gym].self, from: data)
+                    let workouts = try JSONDecoder().decode(Gym.self, from: data)
                 
                     completionHandler(nil, workouts)
             } catch {
