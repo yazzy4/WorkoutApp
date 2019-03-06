@@ -7,7 +7,10 @@ target 'WorkoutApp' do
 
   # Pods for WorkoutApp
 pod 'Firebase/Core'
-
 pod 'Firebase/Auth'
+pod 'Firebase/Storage'
+pod 'Firebase/Firestore'
+pod 'DateToolsSwift'
+
 
 end
