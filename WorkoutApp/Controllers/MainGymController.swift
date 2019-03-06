@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GymController: UIViewController {
+class MainGymController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -66,7 +66,7 @@ class GymController: UIViewController {
 
 
 
-extension GymController: UITableViewDataSource {
+extension MainGymController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gyms.count
     }
