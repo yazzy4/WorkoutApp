@@ -6,7 +6,7 @@
 //  Copyright © 2019 Yaz Burrell. All rights reserved.
 //
 
-
+//For the map view 
 import Foundation
 
 struct Gym: Codable {

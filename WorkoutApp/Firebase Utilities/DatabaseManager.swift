@@ -24,7 +24,7 @@ final class DatabaseManager {
         return db
     }()
     
-    static func postWorkoutToDatabase(gymEntry: GymEntry) {
+    static func postWorkoutToDatabase(gymEntry: GymEntry, workoutType: WorkoutSelection) {
         var ref: DocumentReference? = nil
         ref = firebaseDB.collection(DatabaseKeys.GymCollectionKey).addDocument(data: [
             "workout"    : gymEntry.workoutType,
@@ -32,10 +32,22 @@ final class DatabaseManager {
             "startTime"  : gymEntry.startTime,
             "endTime"    : gymEntry.endTime,
             "gymId"   : gymEntry.gymId,
-            "dbReference" : gymEntry.dbReferenceDocumentId
+            "dbReference" : gymEntry.dbReferenceDocumentId,
+            "backDay" : workoutType.day1,
+            "chestDay" : workoutType.day2,
+            "armDay" : workoutType.day3,
+            "legDay" : workoutType.day4,
+            "fiveAM" : workoutType.timeslot,
+            "sixAM" : workoutType.timeslot2,
+            "sevenAM" : workoutType.timeslot3,
+            "nineAM" : workoutType.timeslot4,
+            "tenAM" : workoutType.timeslot5,
+            "eightAM" : workoutType.timeslot6,
+            "gymId" : workoutType.gymId,
+            "dbRef" : workoutType.dbReferenceDocumentId
             ], completion: { (error) in
                 if let error = error {
-                    print("posing race failed with error: \(error)")
+                    print("posing workout failed with error: \(error)")
                 } else {
                     print("post created at ref: \(ref?.documentID ?? "no doc id")")
                     
