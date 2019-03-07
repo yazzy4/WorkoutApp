@@ -24,35 +24,35 @@ final class DatabaseManager {
         return db
     }()
     
-//    static func postRaceReviewToDatabase(raceReview: RaceReview) {
-//        var ref: DocumentReference? = nil
-//        ref = firebaseDB.collection(DatabaseKeys.RaceReviewCollectionKey).addDocument(data: [
-//            "raceName"    : raceReview.name,
-//            "raceReview"  : raceReview.review,
-//            "reviewerId"  : raceReview.reviewerId,
-//            "latitude"    : raceReview.lat,
-//            "longitude"   : raceReview.lon,
-//            "raceType"    : raceReview.type
-//            ], completion: { (error) in
-//                if let error = error {
-//                    print("posing race failed with error: \(error)")
-//                } else {
-//                    print("post created at ref: \(ref?.documentID ?? "no doc id")")
-//                    
-//                    // updating a firestore dcoument:
-//                    // here we are updating the field dbReference for race review,
-//                    // useful for e.g deleting a (race review) document
-//                    DatabaseManager.firebaseDB.collection(DatabaseKeys.RaceReviewCollectionKey)
-//                        .document(ref!.documentID)
-//                        .updateData(["dbReference": ref!.documentID], completion: { (error) in
-//                            if let error = error {
-//                                print("error updating field: \(error)")
-//                            } else {
-//                                print("field updated")
-//                            }
-//                        })
-//                }
-//        })
-//    }
+    static func postWorkoutToDatabase(gymEntry: GymEntry) {
+        var ref: DocumentReference? = nil
+        ref = firebaseDB.collection(DatabaseKeys.GymCollectionKey).addDocument(data: [
+            "workout"    : gymEntry.workoutType,
+            "day"  : gymEntry.day,
+            "startTime"  : gymEntry.startTime,
+            "endTime"    : gymEntry.endTime,
+            "gymId"   : gymEntry.gymId,
+            "dbReference" : gymEntry.dbReferenceDocumentId
+            ], completion: { (error) in
+                if let error = error {
+                    print("posing race failed with error: \(error)")
+                } else {
+                    print("post created at ref: \(ref?.documentID ?? "no doc id")")
+                    
+                    // updating a firestore dcoument:
+                    // here we are updating the field dbReference for race review,
+                    // useful for e.g deleting a (race review) document
+                    DatabaseManager.firebaseDB.collection(DatabaseKeys.GymCollectionKey)
+                        .document(ref!.documentID)
+                        .updateData(["dbReference": ref!.documentID], completion: { (error) in
+                            if let error = error {
+                                print("error updating field: \(error)")
+                            } else {
+                                print("field updated")
+                            }
+                        })
+                }
+        })
+    }
     
 }

@@ -7,3 +7,8 @@
 //
 
 import Foundation
+struct StorageKeys {
+    static let WorkoutKey = "workouts"
+    // can also have more storage bucket keys here
+}
+
