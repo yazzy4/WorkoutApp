@@ -17,14 +17,12 @@ private var usersession: UserSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loginView.delegate = self
-//        usersession = (UIApplication.shared.delegate as! AppDelegate).usersession
-//        usersession.userSessionAccountDelegate = self
-//        usersession.usersessionSignInDelegate = self
+        loginView.delegate = self
+       usersession = (UIApplication.shared.delegate as! AppDelegate).usersession
+       usersession.userSessionAccountDelegate = self
+        
+        usersession.usersessionSignInDelegate = self
     }
-    
-
-    
 }
 
 extension LoginViewController: LoginViewDelegate {
@@ -45,20 +43,33 @@ extension LoginViewController: LoginViewDelegate {
     }
 }
 
+extension LoginViewController: UserSessionAccountCreationDelegate {
+    func didCreateAccount(_ userSession: UserSession, user: User) {
+        showAlert(title: "Account Created", message: "Account created using \(user.email ?? "no email entered") ", style: .alert) { (alert) in
+            self.presentGymMainController()
+        }
+    }
+    
+    func didRecieveErrorCreatingAccount(_ userSession: UserSession, error: Error) {
+        showAlert(title: "Account Creation Error", message: error.localizedDescription, actionTitle: "Try Again")
+    }
+}
+
+
 extension LoginViewController: UserSessionSignInDelegate {
     func didRecieveSignInError(_ usersession: UserSession, error: Error) {
         showAlert(title: "Sign In Error", message: error.localizedDescription, actionTitle: "Try Again")
     }
 
     func didSignInExistingUser(_ usersession: UserSession, user: User) {
-        //self.presentRaceReviewsTabController()
+        self.presentGymMainController()
     }
 
-    private func presentRaceReviewsTabController() {
+    private func presentGymMainController() {
         let storyboard = UIStoryboard(name: "GymMain", bundle: nil)
-        //let mainGymController = storyboard.instantiateViewController(withIdentifier: "GymMain") as! RaceReviewsTabController
-        //raceReviewTabController.modalTransitionStyle = .crossDissolve
-        //raceReviewTabController.modalPresentationStyle = .overFullScreen
-        //self.present(raceReviewTabController, animated: true)
+        let mainGymController = storyboard.instantiateViewController(withIdentifier: "GymMain") as! MainGymController
+        mainGymController.modalTransitionStyle = .crossDissolve
+        mainGymController.modalPresentationStyle = .overFullScreen
+        self.present(mainGymController, animated: true)
     }
 }

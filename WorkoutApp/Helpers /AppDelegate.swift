@@ -14,15 +14,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    //var usersession: UserSession!
-    //var storageManager: StorageManager!
+    var usersession: UserSession!
+    var storageManager: StorageManager!
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        //usersession = UserSession()
-        //storageManager = storageManager
+        usersession = UserSession()
+        storageManager = StorageManager()
+        if let _ = usersession.getCurrentUser() {
+            let storyboard = UIStoryboard(name: "GymMain", bundle: nil)
+            let gymMemberViewController = storyboard.instantiateViewController(withIdentifier: "GymMemberViewController") as! GymMemberViewController
+            window?.rootViewController = gymMemberViewController
+        }
+            
+            // if there isn't a logged user, show the login view controller
+        else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            window?.rootViewController = loginViewController
+        }
+        
+        // present the window
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

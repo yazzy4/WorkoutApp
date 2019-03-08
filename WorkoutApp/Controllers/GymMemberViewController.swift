@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GymMemberViewController: UIViewController {
+class GymMemberViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
