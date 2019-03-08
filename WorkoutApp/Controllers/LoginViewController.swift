@@ -11,7 +11,8 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
-      @IBOutlet weak var loginView: LoginView!
+    
+    let loginView = LoginView.init()
     
 private var usersession: UserSession!
     
@@ -20,8 +21,7 @@ private var usersession: UserSession!
         loginView.delegate = self
        usersession = (UIApplication.shared.delegate as! AppDelegate).usersession
        usersession.userSessionAccountDelegate = self
-        
-        usersession.usersessionSignInDelegate = self
+       usersession.usersessionSignInDelegate = self
     }
 }
 
@@ -67,7 +67,7 @@ extension LoginViewController: UserSessionSignInDelegate {
 
     private func presentGymMainController() {
         let storyboard = UIStoryboard(name: "GymMain", bundle: nil)
-        let mainGymController = storyboard.instantiateViewController(withIdentifier: "GymMain") as! MainGymController
+        let mainGymController = storyboard.instantiateViewController(withIdentifier: "GymMainController") as! GymMemberViewController
         mainGymController.modalTransitionStyle = .crossDissolve
         mainGymController.modalPresentationStyle = .overFullScreen
         self.present(mainGymController, animated: true)

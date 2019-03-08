@@ -295,7 +295,7 @@
         <!--GymMain-->
         <scene sceneID="7x0-GY-XGY">
             <objects>
-                <tabBarController storyboardIdentifier="GymMainController" title="GymMain" automaticallyAdjustsScrollViewInsets="NO" id="SE4-CT-Jq0" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="GymMainController" title="GymMain" automaticallyAdjustsScrollViewInsets="NO" id="SE4-CT-Jq0" customClass="GymMemberViewController" customModule="WorkoutApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3f8-Dk-8VV">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
