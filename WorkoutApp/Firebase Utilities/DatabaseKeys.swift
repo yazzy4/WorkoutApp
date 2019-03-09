@@ -9,5 +9,5 @@
 import Foundation
 struct DatabaseKeys {
     static let GymCollectionKey = "gyms" // firestore collecton key
-    static let UsersCollectionKey = "users" // firestore collection key
+    static let WorkoutsCollectionKey = "workouts" // firestore collection key
 }

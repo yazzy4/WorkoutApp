@@ -8,7 +8,8 @@
 
 import Foundation
 struct StorageKeys {
-    static let WorkoutKey = "workouts"
+    static let ImagesKey = "images"
     // can also have more storage bucket keys here
 }
+
 

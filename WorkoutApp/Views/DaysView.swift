@@ -10,12 +10,32 @@ import UIKit
 
 class DaysView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    public lazy var weekdayView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+    
+        let cv = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
+        cv.register(DaysCollectionViewCell.self, forCellWithReuseIdentifier: "weekdays")
+        return cv
+    }()
 
+    func setCollectionView(){
+        addSubview(weekdayView)
+        weekdayView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    override init(frame: CGRect){
+        super.init(frame: UIScreen.main.bounds)
+        commonInit()
+        
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    private func commonInit() {
+       setCollectionView()
+    }
 }

@@ -11,7 +11,7 @@ import FirebaseStorage
 import FirebaseAuth
 
 protocol StorageManagerDelegate: AnyObject {
-    func didFetchWorkout(_ storageManager: StorageManager, workoutURL: URL)
+    func didFetchImage(_ storageManager: StorageManager, imageURL: URL)
 }
 
 final class StorageManager {
@@ -23,28 +23,28 @@ final class StorageManager {
         return storage.reference()
     }()
     
-    public func postWorkout(withData data: Data) {
+    public func postImage(withData data: Data) {
         guard let user = Auth.auth().currentUser else {
             print("no logged user")
             return
         }
-        let workoutsRef = storageRef.child(StorageKeys.WorkoutKey)
-        let newInfoRef = workoutsRef.child("\(user.uid)")
+        let imagesRef = storageRef.child(StorageKeys.ImagesKey)
+        let newImageRef = imagesRef.child("\(user.uid).jpg")
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
-        let uploadTask = newInfoRef.putData(data, metadata: metadata) { (metadata, error) in
+        let uploadTask = newImageRef.putData(data, metadata: metadata) { (metadata, error) in
             guard let metadata = metadata else {
                 print("error uploading data")
                 return
             }
             let _ = metadata.size // other properties, content-type
-            newInfoRef.downloadURL(completion: { (url, error) in
+            newImageRef.downloadURL(completion: { (url, error) in
                 if let error = error {
                     print("downloadURL error: \(error)")
                 } else if let url = url {
                     // can be attached to a document in the a firestore collection as needed
                     print("downloadURL: \(url)")
-                    self.delegate?.didFetchWorkout(self, workoutURL: url)
+                    self.delegate?.didFetchImage(self, imageURL: url)
                 }
             })
         }

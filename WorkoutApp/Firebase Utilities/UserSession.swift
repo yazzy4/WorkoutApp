@@ -43,7 +43,7 @@ final class UserSession {
                 }
                 // add user to database
                 // use the user.uid as the document id for ease of use when updating / querying current user
-                DatabaseManager.firebaseDB.collection(DatabaseKeys.UsersCollectionKey)
+                DatabaseManager.firebaseDB.collection(DatabaseKeys.WorkoutsCollectionKey)
                     .document(authDataResult.user.uid.description)
                     .setData(["userId"      : authDataResult.user.uid,
                               "email"       : authDataResult.user.email ?? "",
@@ -104,7 +104,7 @@ final class UserSession {
                     return
                 }
                 DatabaseManager.firebaseDB
-                    .collection(DatabaseKeys.UsersCollectionKey)
+                    .collection(DatabaseKeys.WorkoutsCollectionKey)
                     .document(user.uid) // making the user document id the same as the auth userId makes it easy to update the user doc
                     .updateData(["imageURL": photoURL.absoluteString], completion: { (error) in
                         guard let error = error else {

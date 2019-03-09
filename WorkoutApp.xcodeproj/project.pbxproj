@@ -30,19 +30,15 @@
 		910D1E73222F4AED0090B2BB /* DaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910D1E72222F4AED0090B2BB /* DaysViewController.swift */; };
 		910D1E75222F4B5A0090B2BB /* WorkoutLengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910D1E74222F4B5A0090B2BB /* WorkoutLengthViewController.swift */; };
 		910D1E79222F4B950090B2BB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910D1E78222F4B950090B2BB /* LoginViewController.swift */; };
-		910D1E7B222F4C020090B2BB /* GoalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 910D1E7A222F4C020090B2BB /* GoalView.xib */; };
-		910D1E7F222F4C270090B2BB /* DaysView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 910D1E7E222F4C260090B2BB /* DaysView.xib */; };
-		910D1E81222F4C470090B2BB /* WorkoutLengthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 910D1E80222F4C470090B2BB /* WorkoutLengthView.xib */; };
-		910D1E83222F4C5F0090B2BB /* GymMemberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 910D1E82222F4C5F0090B2BB /* GymMemberView.xib */; };
-		910D1E85223080AD0090B2BB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910D1E84223080AD0090B2BB /* LoginView.swift */; };
+		910D1E85223080AD0090B2BB /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910D1E84223080AD0090B2BB /* loginView.swift */; };
 		910D1E872231784D0090B2BB /* GymUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910D1E862231784D0090B2BB /* GymUser.swift */; };
 		910D1E89223178EA0090B2BB /* GymEntry .swift in Sources */ = {isa = PBXBuildFile; fileRef = 910D1E88223178EA0090B2BB /* GymEntry .swift */; };
 		910D1E8B22317E330090B2BB /* WorkoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910D1E8A22317E330090B2BB /* WorkoutType.swift */; };
 		910D1E902231BD5A0090B2BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 910D1E8F2231BD5A0090B2BB /* Main.storyboard */; };
 		910D1E92223310810090B2BB /* GymMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910D1E91223310810090B2BB /* GymMemberViewController.swift */; };
+		910D1E9422343BDD0090B2BB /* DaysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910D1E9322343BDD0090B2BB /* DaysCollectionViewCell.swift */; };
 		913F83F2221B5015007D6426 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 913F83F1221B5015007D6426 /* GoogleService-Info.plist */; };
 		9176F4F921DD63BC001F68A8 /* Gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176F4F821DD63BC001F68A8 /* Gym.swift */; };
-		9176F4FD21DD6506001F68A8 /* WorkoutAPIClient .swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176F4FC21DD6506001F68A8 /* WorkoutAPIClient .swift */; };
 		9176F50221DD668A001F68A8 /* NetworkHelper .swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176F50121DD668A001F68A8 /* NetworkHelper .swift */; };
 		9176F50421DD6851001F68A8 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176F50321DD6851001F68A8 /* AppError.swift */; };
 		9176F50621DD7A8A001F68A8 /* GymDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176F50521DD7A8A001F68A8 /* GymDetailViewController.swift */; };
@@ -78,19 +74,15 @@
 		910D1E72222F4AED0090B2BB /* DaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysViewController.swift; sourceTree = "<group>"; };
 		910D1E74222F4B5A0090B2BB /* WorkoutLengthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLengthViewController.swift; sourceTree = "<group>"; };
 		910D1E78222F4B950090B2BB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		910D1E7A222F4C020090B2BB /* GoalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalView.xib; sourceTree = "<group>"; };
-		910D1E7E222F4C260090B2BB /* DaysView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaysView.xib; sourceTree = "<group>"; };
-		910D1E80222F4C470090B2BB /* WorkoutLengthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutLengthView.xib; sourceTree = "<group>"; };
-		910D1E82222F4C5F0090B2BB /* GymMemberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GymMemberView.xib; sourceTree = "<group>"; };
-		910D1E84223080AD0090B2BB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		910D1E84223080AD0090B2BB /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		910D1E862231784D0090B2BB /* GymUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymUser.swift; sourceTree = "<group>"; };
 		910D1E88223178EA0090B2BB /* GymEntry .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GymEntry .swift"; sourceTree = "<group>"; };
 		910D1E8A22317E330090B2BB /* WorkoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutType.swift; sourceTree = "<group>"; };
 		910D1E8F2231BD5A0090B2BB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		910D1E91223310810090B2BB /* GymMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymMemberViewController.swift; sourceTree = "<group>"; };
+		910D1E9322343BDD0090B2BB /* DaysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCollectionViewCell.swift; sourceTree = "<group>"; };
 		913F83F1221B5015007D6426 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9176F4F821DD63BC001F68A8 /* Gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gym.swift; sourceTree = "<group>"; };
-		9176F4FC21DD6506001F68A8 /* WorkoutAPIClient .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkoutAPIClient .swift"; sourceTree = "<group>"; };
 		9176F50121DD668A001F68A8 /* NetworkHelper .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkHelper .swift"; sourceTree = "<group>"; };
 		9176F50321DD6851001F68A8 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		9176F50521DD7A8A001F68A8 /* GymDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymDetailViewController.swift; sourceTree = "<group>"; };
@@ -132,15 +124,11 @@
 			isa = PBXGroup;
 			children = (
 				910D1E68222F496E0090B2BB /* GoalView.swift */,
-				910D1E7A222F4C020090B2BB /* GoalView.xib */,
 				910D1E6A222F49800090B2BB /* DaysView.swift */,
-				910D1E7E222F4C260090B2BB /* DaysView.xib */,
 				910D1E6C222F49A10090B2BB /* WorkoutLengthView.swift */,
-				910D1E80222F4C470090B2BB /* WorkoutLengthView.xib */,
 				910D1E6E222F49D50090B2BB /* GymMemberView.swift */,
-				910D1E82222F4C5F0090B2BB /* GymMemberView.xib */,
+				910D1E84223080AD0090B2BB /* loginView.swift */,
 				910D1E4C222EE9740090B2BB /* LoginView.xib */,
-				910D1E84223080AD0090B2BB /* LoginView.swift */,
 				910D1E50222EE9FF0090B2BB /* EditRecordDetailView.swift */,
 				910D1E66222EEC590090B2BB /* IBDesignableViews.swift */,
 				910D1E52222EEA1C0090B2BB /* EditRecordDetailView.xib */,
@@ -165,8 +153,17 @@
 			children = (
 				91E8B43621CD9EB900235D0A /* GymMain.storyboard */,
 				910D1E8F2231BD5A0090B2BB /* Main.storyboard */,
+				91E8B43B21CD9EBB00235D0A /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		910D1E9522343BE80090B2BB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				910D1E9322343BDD0090B2BB /* DaysCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9176F4FA21DD63C3001F68A8 /* Models */ = {
@@ -206,7 +203,6 @@
 				9176F50121DD668A001F68A8 /* NetworkHelper .swift */,
 				9176F50321DD6851001F68A8 /* AppError.swift */,
 				910D1E40222C8A5B0090B2BB /* Image Helper.swift */,
-				9176F4FC21DD6506001F68A8 /* WorkoutAPIClient .swift */,
 				91E8B43221CD9EB900235D0A /* AppDelegate.swift */,
 			);
 			path = "Helpers ";
@@ -234,13 +230,13 @@
 			isa = PBXGroup;
 			children = (
 				9176F4FB21DD63CD001F68A8 /* Controllers */,
+				910D1E9522343BE80090B2BB /* Cells */,
 				910D1E4B222EE8BF0090B2BB /* Views */,
 				910D1E8C2231B4640090B2BB /* Storyboards */,
 				9176F50021DD6662001F68A8 /* Helpers  */,
 				910D1E54222EEA680090B2BB /* Firebase Utilities */,
 				9176F4FA21DD63C3001F68A8 /* Models */,
 				91E8B43921CD9EBB00235D0A /* Assets.xcassets */,
-				91E8B43B21CD9EBB00235D0A /* LaunchScreen.storyboard */,
 				913F83F1221B5015007D6426 /* GoogleService-Info.plist */,
 				91E8B43E21CD9EBB00235D0A /* Info.plist */,
 			);
@@ -316,10 +312,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				910D1E83222F4C5F0090B2BB /* GymMemberView.xib in Resources */,
-				910D1E7B222F4C020090B2BB /* GoalView.xib in Resources */,
-				910D1E7F222F4C270090B2BB /* DaysView.xib in Resources */,
-				910D1E81222F4C470090B2BB /* WorkoutLengthView.xib in Resources */,
 				91E8B43D21CD9EBB00235D0A /* LaunchScreen.storyboard in Resources */,
 				910D1E902231BD5A0090B2BB /* Main.storyboard in Resources */,
 				91E8B43A21CD9EBB00235D0A /* Assets.xcassets in Resources */,
@@ -423,9 +415,9 @@
 				910D1E41222C8A5B0090B2BB /* Image Helper.swift in Sources */,
 				910D1E872231784D0090B2BB /* GymUser.swift in Sources */,
 				91E8B43321CD9EB900235D0A /* AppDelegate.swift in Sources */,
+				910D1E9422343BDD0090B2BB /* DaysCollectionViewCell.swift in Sources */,
 				910D1E46222D8B1D0090B2BB /* WorkoutProgram.swift in Sources */,
-				910D1E85223080AD0090B2BB /* LoginView.swift in Sources */,
-				9176F4FD21DD6506001F68A8 /* WorkoutAPIClient .swift in Sources */,
+				910D1E85223080AD0090B2BB /* loginView.swift in Sources */,
 				910D1E58222EEAC50090B2BB /* DatabaseKeys.swift in Sources */,
 				910D1E65222EEC2C0090B2BB /* UIViewController+Alerts.swift in Sources */,
 				910D1E92223310810090B2BB /* GymMemberViewController.swift in Sources */,
